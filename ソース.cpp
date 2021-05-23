@@ -16,6 +16,7 @@ template<class BYTE,std::size_t RawByte> using Bit = std::array<BYTE,RawByte>;
 template<class BYTE,std::size_t RawByte> using Bit = FixedHeapArray<BYTE,RawByte>;
 #endif
 
+
 template<class BIT,std::size_t Size>
 class NBYTE {
 public:
