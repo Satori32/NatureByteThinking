@@ -23,8 +23,8 @@ public:
 	typedef std::array<BIT, Size> BYTE;
 	NBYTE() { B.fill(BIT{}); }
 
-	const BYTE& get() {
-		return B;
+	const BIT& get(std::size_t Idx) {
+		return B[Idx];
 	}
 
 	std::size_t Size() {
@@ -37,6 +37,9 @@ public:
 		B[Idx] = V;
 		return true;
 	}
+	BIT& operator [](std::size_t Idx) {
+		return B[Idx];
+	}
 
 protected:
 	BYTE B;
@@ -47,8 +50,8 @@ class AirProtocolObject{
 public:
 	AirProtocolObject() { B.fill(BIT{}); }
 	typedef std::array<BIT, 3> BYTE;
-	const BYTE& get() {
-		return B;
+	const BIT& get(std::size_t Idx) {
+		return B[Idx];
 	}
 
 	std::size_t Size() {
@@ -60,6 +63,10 @@ public:
 		
 		B[Idx] = V;
 		return true;
+	}
+
+	BIT& operator [](std::size_t Idx) {
+		return B[Idx];
 	}
 
 protected:
